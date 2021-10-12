@@ -10,8 +10,22 @@ const options = {
     const randDuration = this.duration[this.randNum(this.duration)];
     const randExercise = this.exercise[this.randNum(this.exercise)];
     const randRest = this.rest[this.randNum(this.rest)];
-    return `Do ${randExercise} for ${randDuration} seconds.\nThen rest for ${randRest} seconds.`;
+    return `${randExercise} for ${randDuration} seconds.\nThen rest for ${randRest} seconds.`;
   }
 }
 // Log random exercise to console
 console.log(options.generateExercise());
+
+$(document).ready(() => {
+
+  $('#newExerciseBtn').on('click', () => {
+
+    if ($('#title').text() !== 'Your next exercise is:') {
+      $('#title').text('Your next exercise is:');
+    }
+
+    $('#newExerciseBtn').text('Generate New Exercise');
+    $('#exercise').text(options.generateExercise());
+  })
+
+});
