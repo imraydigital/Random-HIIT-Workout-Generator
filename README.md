@@ -1,1 +1,1 @@
-# Random-Exercise-Generator
+# Random-HIIT-Workout-Generator
